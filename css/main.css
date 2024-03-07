@@ -24,24 +24,65 @@ header {
   width: 300px;
   display: block;
   margin: 0 auto;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+#character_nav {
+  background-color: #675050;
+  background-image: url(../images/characters_art_mas_mob_01.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: multiply;
 }
 
 .characters {
   list-style-type: none;
   padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-size: 14px;
 }
 
 .characters li {
   height: 220px;
+  margin: 10px 8px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 155px 0 rgb(255, 0, 0) inset;
+  transition: box-shadow 0.2s ease;
+}
+
+.characters li:hover {
+  box-shadow: 0 220px 0 rgb(255, 0, 0) inset;
 }
 
 .characters li h3 {
   color: white;
-  padding: 15px 8px;
+  padding: 12px 8px;
 }
 
 .characters li a {
   text-decoration: none;
+}
+
+article,
+#instructions {
+  padding: 20px;
+}
+
+article h5,
+#instructions h5 {
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 14px;
+}
+
+article p,
+#instructions p {
+  font-size: 18px;
+  text-align: center;
 }
 
 .sprite {
@@ -54,7 +95,7 @@ header {
   background-position: -150px 0;
 }
 
-#cint {
+#clint {
   background-position: -300px 0;
 }
 
@@ -76,14 +117,79 @@ header {
 #hulk:hover,
 #thor:hover,
 #widow:hover {
-  background-position-y: 150px;
+  background-position-y: -150px;
 }
 
 #instructions {
-  padding: 20px;
+  padding: 20px 0;
   text-align: center;
 }
 
 footer {
   text-align: center;
+  padding: 20px 0;
+}
+
+.sticky-footer {
+  position: sticky;
+  top: 100%;
+  height: 80px;
+  background-color: rgb(40, 37, 37);
+}
+
+.lightbox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85);
+  background-image: url(../images/Cap_LB_Bg.png);
+  background-repeat: no-repeat;
+  background-size: 55vh;
+  background-position: 40px bottom;
+  display: none;
+}
+
+#lightbox5 {
+  background-image: url(../images/Thor_LB_Bg2.png);
+}
+
+.lightbox_close {
+  position: absolute;
+  top: 20px;
+  right: 5%;
+  color: white;
+  font-size: 36px;
+  text-decoration: none;
+  font-weight: bolder;
+  transition: all 0.5s ease-in-out;
+}
+
+.lightbox_close:hover {
+  opacity: 0.5;
+  color: red;
+}
+
+.lightbox article {
+  width: 55%;
+  margin-left: 40%;
+  padding-top: 50px;
+}
+
+.lb_text,
+.lb_heading {
+  text-align: left;
+}
+
+.lb_text {
+  line-height: 26px;
+}
+
+.lb_heading {
+  font-size: 34px;
+}
+
+.lightbox:target {
+  display: block;
 }
